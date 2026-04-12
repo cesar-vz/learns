@@ -12,8 +12,7 @@ The level of autonomy in some agents may be li mited.
 
 Example of an agentic workflow for research purposes.
 
-![assets][01.png]
-
+![](assets/01.png)
 
 Red: Human interactions
 
