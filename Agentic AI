@@ -1,0 +1,209 @@
+# What is Agentic AI?
+
+An agentic AI workflow is a **process** where an **LLM-based app executes multiple steps** to complete a task.
+
+Agentic workflows align with **Compound AI Systems** — advanced configurations that combine multiple AI models, techniques, or systems to solve complex problems more effectively than a single model could. Each component specializes in a particular task and works collaboratively or sequentially.
+
+---
+
+## Degrees of Autonomy
+
+Depending on requirements, AI workflows can be executed using various hybrid agentic models. The level of autonomy may be limited or expanded based on the use case.
+
+> **Legend (workflow diagrams):**
+> - 🔴 Red = Human interaction required
+> - 🟢 Green = LLM decides the next step autonomously
+
+<!-- [image1: Example agentic workflow for research purposes — insert here] -->
+
+### The Autonomy Spectrum
+
+| Degree | Characteristics | Example (Essay Writing) |
+|---|---|---|
+| **Less Autonomous** | Fully deterministic; sequence of steps is hard-coded by the engineer. | User Query → Search → Fetch → Summarize |
+| **Semi-Autonomous** | Can make some decisions (like choosing between tools), within a predefined scope. | LLM chooses between Google Search or ArXiv based on topic. |
+| **Highly Autonomous** | The LLM decides the sequence, how many loops, and which tools to use/create. | LLM searches, reflects, decides it needs more data, and repeats. |
+
+<!-- [image2: Autonomy spectrum diagram — insert here] -->
+
+### Practical Implementation vs. Research
+
+- **Low Autonomy** — Most common in business today. Controllable, predictable, reliable. Ideal for production environments.
+- **High Autonomy** — Frontier of research. Powerful but harder to control and more unpredictable.
+
+> **Key Insight:** You don't need "maximum autonomy" for a system to be valuable. Many successful AI applications sit on the lower end of the agentic spectrum — balancing AI reasoning with human-defined guardrails.
+
+---
+
+## Benefits of Agentic AI
+
+### Parallelism (Superhuman Speed)
+
+Human cognition is fundamentally sequential. Agentic workflows run tasks **asynchronously**:
+
+1. Generate multiple search queries **simultaneously**
+2. Download and read all resulting web pages **at the same time**
+3. Synthesize data into a final output
+
+> Even though agentic workflows take longer than a zero-shot prompt (more steps), they are drastically faster than a human doing equivalent research.
+
+<!-- [image3: Parallelism diagram — insert here] -->
+
+### Modularity (The "Lego Block" Architecture)
+
+Non-agentic AI is a black box — prompt in, answer out. Agentic workflows are **modular**: complex tasks are broken into atomic steps you can swap on the fly.
+
+- **Swapping Tools:** If Google Search isn't returning good results, swap the agent's tool to GitHub or Stack Overflow instead.
+- **Swapping Models:** Use a cheap, fast model (e.g., Llama 3) for search term generation, and a heavier model (e.g., Claude Sonnet or GPT-4) for the final output.
+
+### Massive Performance Gains (Workflow > Scaling)
+
+The industry used to believe bigger = better. Agentic workflows prove this wrong.
+
+**HumanEval coding benchmark results:**
+
+| Approach | Score |
+|---|---|
+| GPT-3.5 Zero-shot | 40% |
+| GPT-4 Zero-shot | 67% |
+| GPT-3.5 **Agentic** (draft → test → reflect → rewrite) | **>67%** |
+
+> **Key Insight:** You don't always need the most expensive frontier model. Wrapping a cheaper model in an intelligent workflow can achieve state-of-the-art results at a fraction of the cost.
+
+---
+
+## Task Decomposition: Identifying the Steps in a Workflow
+
+**Task Decomposition** is the art of translating a messy human workflow into a precise, step-by-step recipe that an AI can execute.
+
+### 1. The Core Concept
+
+An LLM left to its own devices gives surface-level, "lazy" output. To get deep, expert-level results, break the macro-goal down into **micro-tasks**.
+
+**The Litmus Test for Every Step:**
+
+For each step, ask:
+> *"Can this specific step be executed flawlessly by a single LLM prompt, a piece of code, or an API call?"*
+
+If **No** → the step is still too broad. Decompose further.
+
+### 2. The "Human Proxy" Iteration Loop
+
+Building agents is rarely a one-and-done process. When output is poor, debug by asking:
+> *"How would a human expert fix this?"*
+
+<!-- [image4: Essay Writer Evolution diagram — insert here] -->
+
+### 3. Real-World Task Breakdowns
+
+| Application | Step 1 (Brain) | Step 2 (Tool/Action) | Step 3 (Tool/Action) |
+|---|---|---|---|
+| **Customer Support** | LLM extracts User ID, Order #, and Intent from email. | Agent queries SQL database for order status via API. | LLM drafts reply; Agent sends email via API. |
+| **Invoice Processing** | OCR model converts PDF to raw text. | LLM extracts Biller Name, Amount, Due Date. | Agent triggers Python script to update accounting software. |
+
+<!-- [image5: Task breakdown diagram — insert here] -->
+
+### 4. The Agentic Toolbox
+
+**The "Brains" (Models):**
+- **LLMs** — Reasoning engine: text generation, data extraction, routing decisions.
+- **Multimodal / Specialized Models** — Image analysis, Speech-to-Text, OCR.
+
+**The "Hands" (Tools & APIs):**
+- **Information Retrieval** — Web search (Tavily, Google) or RAG (searching internal private databases).
+- **Action APIs** — Sending emails, checking calendars, fetching live data.
+- **Code Execution** — Secure sandbox where the LLM writes and runs Python code.
+
+<!-- [image6: Agentic toolbox diagram — insert here] -->
+
+---
+
+## Evaluating Agentic Workflows
+
+### 1. The "Build First, Evaluate Later" Mindset
+
+It is nearly impossible to anticipate every way an agent might fail.
+
+- **Strategy:** Don't spend weeks predicting errors. Build a V1, run it, manually read outputs, spot weird behaviors.
+- Once you spot a recurring error → build an "Eval" specifically to eliminate it.
+
+### 2. The Two Types of Evaluation
+
+| Type | When to Use | Example |
+|---|---|---|
+| **Objective Evals (Code-Based)** | Black-and-white rules | Python script counting competitor name mentions in output |
+| **Subjective Evals (LLM-as-a-Judge)** | Qualitative outputs | Second LLM grading tone or depth of an essay |
+
+> ⚠️ **Warning:** Asking an LLM to rate something "on a scale of 1 to 5" is often unreliable. More robust frameworks are required.
+
+### 3. End-to-End vs. Component Evals
+
+- **End-to-End Evals** — Measuring the final output of the entire system. *(Did it solve the customer's problem?)*
+- **Component-Level Evals** — Measuring one specific micro-task. *(Did the routing LLM correctly identify a billing issue vs. tech support?)*
+
+### 4. Error Analysis (Reading the "Traces")
+
+When an agent fails, don't just look at the final bad answer. Perform **Error Analysis** by reading the **traces** — logs of intermediate steps, tool calls, and raw LLM thoughts — to pinpoint exactly which step in your decomposition failed.
+
+---
+
+## Agentic Design Patterns
+
+Agentic workflows are built by combining building blocks into complex sequences using **4 key repeatable design patterns**.
+
+### 1. Reflection
+
+The agent examines its own output and iterates to improve it.
+
+**Flow:** `LLM generates output` → `LLM critiques output` → `Feedback fed back` → `Improved version generated`
+
+- **Example:** LLM writes code → prompted to check correctness/style/efficiency → critique fed back → better code produced.
+- **Enhanced variant:** If you can *run* the code and capture runtime errors, feeding those errors back creates even stronger iteration loops.
+- **Multi-agent variant:** A separate **"critique agent"** (same LLM, different persona prompt) debates back and forth with the generator agent.
+- **Reality check:** Not magic. Doesn't work 100% of the time, but often provides a meaningful performance bump.
+
+---
+
+### 2. Tool Use
+
+The agent is given **callable functions (tools)** to extend its capabilities beyond text generation.
+
+| Tool Category | Examples |
+|---|---|
+| **Information Retrieval** | Web search, database queries |
+| **Code Execution** | Write and run code to compute answers |
+| **Productivity** | Email, calendar, file management |
+| **Media Processing** | Image analysis, generation |
+
+> **Key Insight:** The LLM *decides which tools to call* — it is not following a hardcoded script. It selects the right function dynamically.
+
+---
+
+### 3. Planning
+
+The agent **autonomously decides** the sequence of steps needed to complete a task.
+
+- **Example (HuggingGPT paper):** Given a complex image+text request, the model decomposes it into: pose detection → image generation → text generation → text-to-speech.
+- **Key distinction from Tool Use:** In Tool Use, the developer defines *when* tools are called. In Planning, the *LLM itself* decides the order and number of steps.
+- **Trade-off:** Harder to control and more experimental, but can produce powerful results.
+
+---
+
+### 4. Multi-Agent Collaboration
+
+Multiple **specialized agents** work together like a team on a complex project.
+
+| Example | Agents Involved | Task |
+|---|---|---|
+| **ChatDev** | CEO, Programmer, Tester, Designer | Collaborative software development |
+| **Marketing Brochure** | Researcher → Marketer → Editor | Sequential content creation pipeline |
+
+- **Trade-off:** Less predictable (can't always anticipate agent behavior), but research shows better outcomes on complex tasks (biographies, chess moves, software).
+
+---
+
+### Design Patterns: Key Takeaway
+
+> The engineering challenge is: **find the right building blocks → combine them via these patterns → build evals to measure and iterate.**
+>
+> You don't hardcode everything — you design the structure and let the LLM handle the reasoning within it.
