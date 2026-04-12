@@ -28,7 +28,7 @@ class César:
 
 ---
 
-> *Raw notes. No polish. Just signal over noise.*  
+> *Raw notes.* 
 > *Each folder is a domain. Each file is a lesson. Each commit is proof of work.*
 
 ---
