@@ -7,6 +7,7 @@
  |_|\___|\__,_|_|  |_| |_|
 
 ```
+```bash
 $ whoami
 > network_engineer | ai_developer | self_taught
 
@@ -15,9 +16,22 @@ $ cat /etc/motd
 
 $ ping knowledge.base
 > Reply from learns/: bytes=∞ time=ongoing TTL=64
-                    
-                          
+```
 
+```python
+class César:
+    role        = ["Network Engineer", "AI Agent Developer"]
+    status      = "always_learning"
+    location    = "Barcelona // The Grid"
+    stack       = ["Python", "AI Agents", "BGP", "SD-WAN", "Versa"]
+    
+    def daily_routine(self):
+        while self.alive:
+            self.learn()
+            self.document()
+            self.push()
+            self.repeat()
+```
 
 ---
 
@@ -25,7 +39,7 @@ $ ping knowledge.base
 
 ---
 
-> *Raw notes.* 
+> *Raw notes. No polish. Just signal over noise.*  
 > *Each folder is a domain. Each file is a lesson. Each commit is proof of work.*
 
 ---
