@@ -17,29 +17,13 @@ $ cat /etc/motd
 $ ping knowledge.base
 > Reply from learns/: bytes=∞ time=ongoing TTL=64
 ```
-
-```python
-class César:
-    role        = ["Network Engineer", "AI Agent Developer"]
-    status      = "always_learning"
-    location    = "Barcelona // The Grid"
-    stack       = ["Python", "AI Agents", "BGP", "SD-WAN", "Versa"]
-    
-    def daily_routine(self):
-        while self.alive:
-            self.learn()
-            self.document()
-            self.push()
-            self.repeat()
-```
-
 ---
 
 `⚡ signal` &nbsp;`🔌 connected` &nbsp;`🛰️ transmitting` &nbsp;`🧠 loading...`
 
 ---
 
-> *Raw notes. No polish. Just signal over noise.*  
+> *Raw notes.*  
 > *Each folder is a domain. Each file is a lesson. Each commit is proof of work.*
 
 ---
