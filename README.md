@@ -1,9 +1,27 @@
-# 📚 learns
-
-Personal knowledge base — notes and references from everything I'm actively studying.
-
-Each folder is a topic. Each file is a lesson. Updated whenever I learn something worth keeping.
+```
+█░░ █▀▀ ▄▀█ █▀█ █▄░█ █▀
+█▄▄ ██▄ █▀█ █▀▄ █░▀█ ▄█
+```
+> ⚡ *personal knowledge base. raw notes. no polish. just signal.*
 
 ---
 
-> *Movement over perfection. Notes don't have to be polished — they have to exist.*
+`[ status: always_learning ]` `[ access: public ]` `[ noise: filtered ]`
+
+---
+
+Each folder is a topic. Each file is a lesson.  
+Updated whenever something is worth keeping.
+
+```
+// philosophy
+while (alive) {
+  learn();
+  document();
+  push();
+}
+```
+
+---
+
+*> movement over perfection. notes don't have to be clean — they have to exist._*
