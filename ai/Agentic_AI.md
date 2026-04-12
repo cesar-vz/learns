@@ -12,6 +12,9 @@ The level of autonomy in some agents may be li mited.
 
 Example of an agentic workflow for research purposes.
 
+
+
+
 Red: Human interactions
 
 Green: LLM can decide it self what is the best step to follow.
