@@ -39,8 +39,5 @@ $ tree learns/
 ```
 
 ---
-https://img.shields.io/github/last-commit/cesar-vz/learns?style=flat-square&color=39ff14&labelColor=0d0d0d
-https://img.shields.io/github/repo-size/cesar-vz/learns?style=flat-square&color=00bfff&labelColor=0d0d0d
-
-![GitHub last commit](https://img.shields.io/github/last-commit/YOURUSERNAME/learns?style=flat-square&color=39ff14&labelColor=0d0d0d)
-![GitHub repo size](https://img.shields.io/github/repo-size/YOURUSERNAME/learns?style=flat-square&color=00bfff&labelColor=0d0d0d)
+![GitHub last commit](https://img.shields.io/github/last-commit/cesar-vz/learns?style=flat-square&color=39ff14&labelColor=0d0d0d)
+![GitHub repo size](https://img.shields.io/github/repo-size/cesar-vz/learns?style=flat-square&color=00bfff&labelColor=0d0d0d)
