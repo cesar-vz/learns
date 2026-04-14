@@ -35,7 +35,7 @@ $ tree learns/
 ├── python/           # code. always more code.
 ├── linux/            # the shell is home
 ├── aws/              # clouds are just other people's computers
-└── ...               # whatever comes next
+└── github            # pull, clone, shoot.
 ```
 
 ---
