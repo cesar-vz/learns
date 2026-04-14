@@ -28,7 +28,7 @@ Agentic workflows can be categorized by the degree of autonomy given to the unde
 | **`Semi-Autonomous`** | `Can make some decisions (like choosing between a few tools), but within a predefined scope.` | `LLM chooses between Google Search or ArXiv based on the topic.` |
 | **`Highly Autonomous`** | `The LLM decides the sequence of steps, how many times to loop, and which tools to use/create.` | `LLM searches, reflects on results, decides it needs more data, and repeats.` |
 
-![][image2]
+![alt text](assets/02.png)
 
  **Practical Implementation vs. Research**
 
@@ -51,7 +51,7 @@ Agentic workflows can run tasks asynchronously:
 
 **Why this matters:** Even though an agentic workflow takes longer than a standard "zero-shot" prompt (because it is doing more steps), it is drastically faster than a human doing the equivalent amount of rigorous research and planning.
 
-![][image3]
+![alt text](assets/03.png)
 
 **Modularity (The "Lego Block" Architecture)**
 
@@ -98,7 +98,7 @@ The process to building agents are rarely a one-and-done process. When your agen
 
 **Example: The Essay Writer Evolution**
 
-**![][image4]**
+![alt text](assets/04.png)
 
 ### **3\. Real-World Task Breakdowns**
 
@@ -109,7 +109,7 @@ Here is how common business tasks map to agentic steps:
 | **Customer Support** | LLM extracts User ID, Order \#, and Intent from email. | Agent triggers API to query the SQL database for order status. | LLM drafts reply; Agent triggers API to send email. |
 | **Invoice Processing** | OCR model converts PDF to raw text. | LLM extracts Biller Name, Amount, and Due Date. | Agent triggers Python script to update accounting software. |
 
-![][image5]
+![alt text](assets/05.png)
 
 ---
 
@@ -125,7 +125,7 @@ To successfully decompose tasks, you need to know what "tools" you actually have
   * **Action APIs:** Sending emails, checking calendars, fetching live weather.  
   * **Code Execution:** A secure sandbox where the LLM can write and run Python code to perform complex math, format data, or build charts.
 
-![][image6]
+![alt text](assets/06.png)
 
 ---
 
