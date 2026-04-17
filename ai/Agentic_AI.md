@@ -6,14 +6,13 @@ Agentic workflows align with [Compound AI systems](https://www.ibm.com/think/top
 
 ## **Degrees of Autonomy.**
 
-Depending on the requirements, AI Workflows can be executed  using various hybrid agentic models.
+Depending on the requirements, AI Workflows can be executed using various hybrid agentic models.
 
 The level of autonomy in some agents may be li mited.
 
 Example of an agentic workflow for research purposes.
 
-![](assets/01.png)
-
+![alt text](assets/01.png)
 Red: Human interactions
 
 Green: LLM can decide it self what is the best step to follow.
@@ -23,17 +22,15 @@ Green: LLM can decide it self what is the best step to follow.
 Agentic workflows can be categorized by the degree of autonomy given to the underlying Language Model (LLM). This spectrum ranges from rigidly defined, deterministic processes to highly flexible, self-directed decision-making.
 
 | `Degree` | `Characteristics` | `Example (Essay Writing)` |
-| :---- | :---- | :---- |
-| **`Less Autonomous`** | `Fully deterministic; sequence of steps is hard-coded by the engineer.` | `User Query — Search  — Fetch — Summarize.` |
-| **`Semi-Autonomous`** | `Can make some decisions (like choosing between a few tools), but within a predefined scope.` | `LLM chooses between Google Search or ArXiv based on the topic.` |
-| **`Highly Autonomous`** | `The LLM decides the sequence of steps, how many times to loop, and which tools to use/create.` | `LLM searches, reflects on results, decides it needs more data, and repeats.` |
+| --- | --- | --- |
+| `**Less Autonomous**` | `Fully deterministic; sequence of steps is hard-coded by the engineer.` | `User Query — Search — Fetch — Summarize.` |
+| `**Semi-Autonomous**` | `Can make some decisions (like choosing between a few tools), but within a predefined scope.` | `LLM chooses between Google Search or ArXiv based on the topic.` |
+| `**Highly Autonomous**` | `The LLM decides the sequence of steps, how many times to loop, and which tools to use/create.` | `LLM searches, reflects on results, decides it needs more data, and repeats.` |
 
-![alt text](assets/02.png)
+**Practical Implementation vs. Research**
 
- **Practical Implementation vs. Research**
-
-* **Low Autonomy:** These are the most common in business today. They are controllable, predictable, and reliable, making them ideal for production environments.  
-* **High Autonomy:** These are at the frontier of research. They are incredibly powerful but harder to control and more unpredictable.
+*   **Low Autonomy:** These are the most common in business today. They are controllable, predictable, and reliable, making them ideal for production environments.
+*   **High Autonomy:** These are at the frontier of research. They are incredibly powerful but harder to control and more unpredictable.
 
 Key Insight: You don't need "maximum autonomy" for a system to be valuable. Many of the most successful AI applications currently sit on the lower end of the agentic spectrum because they balance AI reasoning with human-defined guardrails.
 
@@ -45,9 +42,9 @@ Human cognition is fundamentally sequential. If a human needs to research black 
 
 Agentic workflows can run tasks asynchronously:
 
-1. The system generates three different **search queries simultaneously.**  
-2. It downloads and **reads** all nine resulting web pages at the **exact same time.**  
-3. It synthesizes the data into a final output.
+1.  The system generates three different **search queries simultaneously.**
+2.  It downloads and **reads** all nine resulting web pages at the **exact same time.**
+3.  It synthesizes the data into a final output.
 
 **Why this matters:** Even though an agentic workflow takes longer than a standard "zero-shot" prompt (because it is doing more steps), it is drastically faster than a human doing the equivalent amount of rigorous research and planning.
 
@@ -59,18 +56,18 @@ Non-agentic AI is a black box—you put a prompt in, and you get an answer out. 
 
 Agentic workflows are highly modular. Because a complex task is broken down into atomic steps, you can swap out components on the fly to find the best fit:
 
-* **Swapping Tools:** If Google Search isn't returning good results for a coding query, you can instantly swap the agent's tool to search GitHub or Stack Overflow instead.  
-* **Swapping Models:** You don't have to use the same brain for every step. You might use a cheap, fast model (like Llama 3\) to generate search terms, but use a heavy, smart model (like Claude 3.5 Sonnet or GPT-4) to write the final essay.
+*   **Swapping Tools:** If Google Search isn't returning good results for a coding query, you can instantly swap the agent's tool to search GitHub or Stack Overflow instead.
+*   **Swapping Models:** You don't have to use the same brain for every step. You might use a cheap, fast model (like Llama 3) to generate search terms, but use a heavy, smart model (like Claude 3.5 Sonnet or GPT-4) to write the final essay.
 
-**Massive Performance Gains (The "Workflow \> Scaling" Concept)**
+**Massive Performance Gains (The "Workflow > Scaling" Concept)**
 
 Historically, the AI industry believed the only way to get better results was to buy a bigger, smarter, and more expensive model. Agentic workflows prove this wrong.
 
 Ng uses the **HumanEval coding benchmark** (a test of how well an AI writes software) to prove this point:
 
-* **GPT-3.5 (Zero-shot):** Scores **40%** (Directly asking it to write the code once).  
-* **GPT-4 (Zero-shot):** Scores **67%** (A massive jump representing a generational leap in model size).  
-* **GPT-3.5 (Agentic):** When the older, weaker GPT-3.5 is placed inside a workflow (where it is allowed to draft the code, test it, reflect on the errors, and rewrite it), its performance drastically improves, **surpassing the 67% score of GPT-4.**
+*   **GPT-3.5 (Zero-shot):** Scores **40%** (Directly asking it to write the code once).
+*   **GPT-4 (Zero-shot):** Scores **67%** (A massive jump representing a generational leap in model size).
+*   **GPT-3.5 (Agentic):** When the older, weaker GPT-3.5 is placed inside a workflow (where it is allowed to draft the code, test it, reflect on the errors, and rewrite it), its performance drastically improves, **surpassing the 67% score of GPT-4.**
 
 **Why this matters:** You don't always need to pay for the most expensive "frontier" model. By wrapping a cheaper, faster model in an intelligent workflow, you can achieve state-of-the-art results at a fraction of the cost.
 
@@ -88,13 +85,13 @@ An LLM left to its own devices will often give you a surface-level, "lazy" outpu
 
 As you break a task down, you must look at every single step and ask one binary question:
 
-*"Can this specific step be executed flawlessly by a single LLM prompt, a specific piece of code, or an API call?"*
+_"Can this specific step be executed flawlessly by a single LLM prompt, a specific piece of code, or an API call?"_
 
 If the answer is **No**, the step is still too broad and must be decomposed further.
 
 ### **2\. The "Human Proxy" Iteration Loop**
 
-The process to building agents are rarely a one-and-done process. When your agent's output is poor (e.g., the essay is disjointed or the code fails), you debug it by asking: *"How would a human expert fix this?"*
+The process to building agents are rarely a one-and-done process. When your agent's output is poor (e.g., the essay is disjointed or the code fails), you debug it by asking: _"How would a human expert fix this?"_
 
 **Example: The Essay Writer Evolution**
 
@@ -105,8 +102,8 @@ The process to building agents are rarely a one-and-done process. When your agen
 Here is how common business tasks map to agentic steps:
 
 | `Application` | `Step 1 (Brain)` | `Step 2 (Tool/Action)` | `Step 3 (Tool/Action)` |
-| :---- | :---- | :---- | :---- |
-| **Customer Support** | LLM extracts User ID, Order \#, and Intent from email. | Agent triggers API to query the SQL database for order status. | LLM drafts reply; Agent triggers API to send email. |
+| --- | --- | --- | --- |
+| **Customer Support** | LLM extracts User ID, Order #, and Intent from email. | Agent triggers API to query the SQL database for order status. | LLM drafts reply; Agent triggers API to send email. |
 | **Invoice Processing** | OCR model converts PDF to raw text. | LLM extracts Biller Name, Amount, and Due Date. | Agent triggers Python script to update accounting software. |
 
 ![alt text](assets/05.png)
@@ -117,13 +114,13 @@ Here is how common business tasks map to agentic steps:
 
 To successfully decompose tasks, you need to know what "tools" you actually have available to assign to those micro-tasks.
 
-* **The "Brains" (Models):**  
-  * **LLMs:** The reasoning engine (text generation, data extraction, routing decisions).  
-  * **Multimodal/Specialized Models:** Tools for specific senses (Image analysis, Speech-to-Text, Optical Character Recognition).  
-* **The "Hands" (Tools & APIs):**  
-  * **Information Retrieval:** Web search (Tavily, Google) or **RAG** (Retrieval-Augmented Generation—searching your own internal private databases).  
-  * **Action APIs:** Sending emails, checking calendars, fetching live weather.  
-  * **Code Execution:** A secure sandbox where the LLM can write and run Python code to perform complex math, format data, or build charts.
+*   **The "Brains" (Models):**
+    *   **LLMs:** The reasoning engine (text generation, data extraction, routing decisions).
+    *   **Multimodal/Specialized Models:** Tools for specific senses (Image analysis, Speech-to-Text, Optical Character Recognition).
+*   **The "Hands" (Tools & APIs):**
+    *   **Information Retrieval:** Web search (Tavily, Google) or **RAG** (Retrieval-Augmented Generation—searching your own internal private databases).
+    *   **Action APIs:** Sending emails, checking calendars, fetching live weather.
+    *   **Code Execution:** A secure sandbox where the LLM can write and run Python code to perform complex math, format data, or build charts.
 
 ![alt text](assets/06.png)
 
@@ -135,25 +132,27 @@ To successfully decompose tasks, you need to know what "tools" you actually have
 
 It is nearly impossible to anticipate every way an AI agent might fail or behave unexpectedly.
 
-* **The Strategy:** Do not spend weeks trying to predict errors. Build a V1 of your workflow, run it, and manually read the outputs to spot weird behaviors (e.g., a customer service agent unexpectedly praising a competitor).  
-* Once you spot a recurring error, you build an "Eval" specifically to eliminate it.
+*   **The Strategy:** Do not spend weeks trying to predict errors. Build a V1 of your workflow, run it, and manually read the outputs to spot weird behaviors (e.g., a customer service agent unexpectedly praising a competitor).
+*   Once you spot a recurring error, you build an "Eval" specifically to eliminate it.
 
 ### **2\. The Two Types of Evaluation**
 
 Depending on the task, you will need to measure success differently:
 
-* **Objective Evals (Code-Based):** Used for black-and-white rules. If your agent is forbidden from mentioning "RivalCo," you don't need an AI to check this. You write a simple Python script to parse the output text and count how many times the competitor's name appears.  
-* **Subjective Evals (LLM-as-a-Judge):** Used for qualitative outputs (like the tone of an email or the depth of an essay). You use a second, separate LLM prompt to read the agent's output and grade it.  
-  * *Note:* Ng warns that asking an LLM to simply rate something "on a scale of 1 to 5" is often unreliable. More robust frameworks are required for this to work well.
+*   **Objective Evals (Code-Based):** Used for black-and-white rules. If your agent is forbidden from mentioning "RivalCo," you don't need an AI to check this. You write a simple Python script to parse the output text and count how many times the competitor's name appears.
+*   **Subjective Evals (LLM-as-a-Judge):** Used for qualitative outputs (like the tone of an email or the depth of an essay). You use a second, separate LLM prompt to read the agent's output and grade it.
 
-    ### **3\. End-to-End vs. Component Evals**
+_Note:_ Ng warns that asking an LLM to simply rate something "on a scale of 1 to 5" is often unreliable. More robust frameworks are required for this to work well.
+
+### **3\. End-to-End vs. Component Evals**
 
 As you iterate on your agent, you will need to test it at different levels of granularity:
 
-* **End-to-End Evals:** Measuring the final output of the entire system (Did it solve the customer's problem?).  
-* **Component-Level Evals:** Measuring the performance of one specific micro-task (Did the routing LLM correctly identify that this was a billing issue instead of a tech support issue?).
+**End-to-End Evals:** Measuring the final output of the entire system (Did it solve the customer's problem?).
 
-  ### **4\. Error Analysis (Reading the "Traces")**
+**Component-Level Evals:** Measuring the performance of one specific micro-task (Did the routing LLM correctly identify that this was a billing issue instead of a tech support issue?).
+
+### **4\. Error Analysis (Reading the "Traces")**
 
 When an agent fails, you can't just look at the final bad answer. You must perform Error Analysis by reading the **traces**—the logs of the intermediate steps, tool calls, and raw thoughts the LLM had along the way. This allows you to pinpoint exactly which step in your decomposition failed.
 
@@ -175,10 +174,10 @@ The agent examines its own output and iterates to improve it.
 
 **Flow:** LLM generates output → LLM critiques that output → feedback is fed back → improved version is generated.
 
-* **Example:** LLM writes code → prompted to check correctness/style/efficiency → critique fed back → better code produced.  
-* **Enhanced variant:** If you can *run* the code and capture error messages, feeding runtime errors back creates even stronger iteration loops.  
-* **Multi-agent variant:** Instead of self-critique, a separate **"critique agent"** (same LLM, different persona prompt) goes back and forth with the generator agent.  
-* **Reality check:** Not magic. Doesn't work 100% of the time, but often provides a meaningful performance bump.
+*   **Example:** LLM writes code → prompted to check correctness/style/efficiency → critique fed back → better code produced.
+*   **Enhanced variant:** If you can _run_ the code and capture error messages, feeding runtime errors back creates even stronger iteration loops.
+*   **Multi-agent variant:** Instead of self-critique, a separate **"critique agent"** (same LLM, different persona prompt) goes back and forth with the generator agent.
+*   **Reality check:** Not magic. Doesn't work 100% of the time, but often provides a meaningful performance bump.
 
 ---
 
@@ -187,13 +186,13 @@ The agent examines its own output and iterates to improve it.
 The agent is given **callable functions (tools)** to extend its capabilities beyond text generation.
 
 | `Tool Category` | `Examples` |
-| :---- | :---- |
-| **`Information Retrieval`** | `Web search, database queries` |
-| **`Code Execution`** | `Write and run code to compute answers` |
-| **`Productivity`** | `Email, calendar, file management` |
-| **`Media Processing`** | `Image analysis, generation` |
+| --- | --- |
+| `**Information Retrieval**` | `Web search, database queries` |
+| `**Code Execution**` | `Write and run code to compute answers` |
+| `**Productivity**` | `Email, calendar, file management` |
+| `**Media Processing**` | `Image analysis, generation` |
 
-**Key Insight:** The LLM *decides which tools to call*—it is not following a hardcoded script. It selects the right function for the task dynamically.
+**Key Insight:** The LLM _decides which tools to call_—it is not following a hardcoded script. It selects the right function for the task dynamically.
 
 ---
 
@@ -201,9 +200,9 @@ The agent is given **callable functions (tools)** to extend its capabilities bey
 
 The agent **autonomously decides** the sequence of steps needed to complete a task.
 
-* **Example (HuggingGPT paper):** Given a complex image+text request, the model decomposes it into: pose detection → image generation → text generation → text-to-speech.  
-* **Key distinction from Tool Use:** In Tool Use, the developer defines *when* tools are called. In Planning, the *LLM itself* decides the order and number of steps.  
-* **Trade-off:** Harder to control and more experimental, but can produce powerful results.
+*   **Example (HuggingGPT paper):** Given a complex image+text request, the model decomposes it into: pose detection → image generation → text generation → text-to-speech.
+*   **Key distinction from Tool Use:** In Tool Use, the developer defines _when_ tools are called. In Planning, the _LLM itself_ decides the order and number of steps.
+*   **Trade-off:** Harder to control and more experimental, but can produce powerful results.
 
 ---
 
@@ -212,11 +211,11 @@ The agent **autonomously decides** the sequence of steps needed to complete a ta
 Multiple **specialized agents** work together like a team on a complex project.
 
 | `Example` | `Agents Involved` | `Task` |
-| :---- | :---- | :---- |
-| **`ChatDev`** | `CEO, Programmer, Tester, Designer` | `Collaborative software development` |
-| **`Marketing Brochure`** | `Researcher → Marketer → Editor` | `Sequential content creation pipeline` |
+| --- | --- | --- |
+| `**ChatDev**` | `CEO, Programmer, Tester, Designer` | `Collaborative software development` |
+| `**Marketing Brochure**` | `Researcher → Marketer → Editor` | `Sequential content creation pipeline` |
 
-* **Trade-off:** Less predictable since you can't always anticipate agent behavior, but research shows better outcomes on complex tasks (biographies, chess moves, software).
+*   **Trade-off:** Less predictable since you can't always anticipate agent behavior, but research shows better outcomes on complex tasks (biographies, chess moves, software).
 
 ---
 
@@ -225,15 +224,3 @@ Multiple **specialized agents** work together like a team on a complex project.
 The engineering challenge is: **find the right building blocks → combine them via these patterns → build evals to measure and iterate.** You don't hardcode everything—you design the structure and let the LLM handle the reasoning within it.
 
 ---
-
-[image1]: assets/image1.png
-
-[image2]: assets/image2.png
-
-[image3]: assets/image3.png
-
-[image4]: assets/image4.png
-
-[image5]: assets/image5.png
-
-[image6]: assets/image6.png
