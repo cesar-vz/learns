@@ -4,8 +4,8 @@
 
 ---
 
-## 🔸 Golden Rule · Multi-Machine
-
+## 🔸 Golden Rule · Multi-Machine.
+	
 *   **Pull before you start. Push when you finish.**
 *   Skip the pull → you edit stale code → merge conflicts incoming ⚠
 

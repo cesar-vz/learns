@@ -2,7 +2,7 @@
 
 An agentic AI workflow is a **process** where an **LLMbased app executes** multiple steps to **complete a task.**
 
-Agentic workflows align with [Compound AI systems](https://www.ibm.com/think/topics/compound-ai-systems) that are basically advanced configurations that combine multiple [AI models](https://www.ibm.com/topics/ai-model), techniques or systems to solve complex problems more effectively than a single artificial intelligence (AI) model could. These systems integrate different components, each specialized in a particular task to work collaboratively or sequentially. lala
+Agentic workflows align with [Compound AI systems](https://www.ibm.com/think/topics/compound-ai-systems) that are basically advanced configurations that combine multiple [AI models](https://www.ibm.com/topics/ai-model), techniques or systems to solve complex problems more effectively than a single artificial intelligence (AI) model could. These systems integrate different components, each specialized in a particular task to work collaboratively or sequentially.
 
 ## **Degrees of Autonomy.**
 
